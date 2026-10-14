@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- HUBGEN:theme start -->
+  <script>
+    (function(){try{var k="arschul:theme",v=localStorage.getItem(k);
+      if(!v){var old=["hub-theme","theme","gh-theme","adv-theme","reviews-theme","worksheets-theme"];
+        for(var i=0;i<old.length;i++){var o=localStorage.getItem(old[i]);if(o){v=o;break;}}
+        v=v||"dark";localStorage.setItem(k,v);}
+      var m=(v==="system")?(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):v;
+      document.documentElement.setAttribute("data-theme",m);}catch(e){}})();
+  </script>
+<!-- HUBGEN:theme end -->
+<title>Lesson Hub — Phil Young's English School</title>
+<!-- HUBGEN:head start -->
+  <meta name="description" content="Ready-to-teach lessons: a Student Pack and a Teacher's Guide for every topic, organized by level.">
+  <link rel="icon" href="https://arschul.github.io/assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lesson Hub">
+  <meta property="og:description" content="Ready-to-teach lessons: a Student Pack and a Teacher's Guide for every topic, organized by level.">
+  <meta property="og:url" content="https://arschul.github.io/lessons/">
+  <link rel="stylesheet" href="https://arschul.github.io/assets/hub.v3.css">
+  <script defer src="https://arschul.github.io/assets/hub.v3.js"></script>
+  <link rel="stylesheet" href="https://arschul.github.io/assets/hub-nav.v1.css">
+  <script defer src="https://arschul.github.io/assets/hub-nav.v1.js"></script>
+  <style>:root{--hub-bg:var(--bg);--hub-surface:var(--surface);--hub-ink:var(--text);--hub-ink-soft:var(--muted);--hub-rule:var(--border);--hub-accent:var(--violet);--hub-radius:var(--radius);--hub-font-display:'Fraunces', serif;--hub-font-ui:'DM Sans', sans-serif;}</style>
+<!-- HUBGEN:head end -->
+<style>
+  /* fallback if the shared stylesheet fails to load — structure only */
+  .hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));gap:1rem;}
+  .hub-card{display:flex;flex-direction:column;gap:.45rem;padding:1.1rem 1.25rem;
+    border:1px solid currentColor;border-radius:10px;text-decoration:none;color:inherit;opacity:.95;}
+  .hub-card[hidden]{display:none;}
+  .hub-card__title{margin:0;font-size:1.02rem;}
+  .hub-card__blurb{margin:0;font-size:.86rem;line-height:1.5;}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0e12;--surface:#15171c;--text:#eef0f2;--muted:#8b929c;--border:#262932;
+    --violet:#a78bfa;--violet-deep:#1c1433;--violet-line:rgba(167,139,250,0.35);
+    --key-accent:#f0c75e;--key-deep:#2a2206;
+    --game-accent:#38bdf8;--game-deep:#082530;
+    --radius:18px;
+  }
+  :root[data-theme="light"]{
+    --bg:#f4f1ea;--surface:#ffffff;--text:#1a1815;--muted:#6b6660;--border:#e2ddd2;
+    --violet:#7c3aed;--violet-deep:#ede9fe;--violet-line:rgba(124,58,237,0.3);
+    --key-accent:#b8860b;--key-deep:#fbf2dc;
+    --game-accent:#0369a1;--game-deep:#e0f2fe;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);
+    min-height:100vh;display:flex;flex-direction:column;align-items:center;
+    transition:background 0.3s,color 0.3s;
+  }
+  .theme-toggle{
+    position:fixed;top:1.25rem;right:1.25rem;z-index:10;
+    width:42px;height:42px;border-radius:50%;border:1px solid var(--border);
+    background:var(--surface);color:var(--muted);cursor:pointer;
+    display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+    transition:all 0.2s;
+  }
+  .theme-toggle:hover{border-color:var(--text);color:var(--text);transform:scale(1.06);}
+
+  .wrap{width:100%;max-width:980px;padding:4.5rem 1.5rem 4rem;}
+
+  .back-link{
+    display:inline-flex;align-items:center;gap:0.4rem;
+    font-size:0.8rem;font-weight:500;color:var(--muted);text-decoration:none;
+    margin-bottom:2.5rem;transition:color 0.2s;
+  }
+  .back-link:hover{color:var(--violet);}
+
+  .eyebrow{
+    font-size:0.72rem;letter-spacing:4px;text-transform:uppercase;
+    color:var(--muted);font-weight:500;margin-bottom:1.1rem;
+  }
+  h1{
+    font-family:'Fraunces',serif;font-weight:700;font-optical-sizing:auto;
+    font-size:clamp(2.4rem,6vw,4rem);line-height:1.05;letter-spacing:-1.5px;
+    margin-bottom:0.9rem;
+  }
+  h1 .accent{
+    background:linear-gradient(90deg,var(--violet),#38bdf8);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .lede{
+    color:var(--muted);font-size:1.05rem;max-width:500px;
+    font-weight:300;line-height:1.7;margin-bottom:3.5rem;
+  }
+
+  /* ── class section ── */
+  .class-section{margin-bottom:3rem;}
+  .class-header{
+    display:flex;align-items:center;gap:0.9rem;margin-bottom:1.25rem;
+    padding-bottom:0.75rem;border-bottom:1px solid var(--border);
+  }
+  .class-badge{
+    font-size:0.7rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;
+    padding:0.25rem 0.75rem;border-radius:100px;
+    background:var(--violet-deep);color:var(--violet);border:1px solid var(--violet-line);
+  }
+  .class-title{
+    font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;letter-spacing:-0.3px;
+  }
+  .test-count{color:var(--muted);font-size:0.85rem;margin-left:auto;}
+
+  /* ── review cards ── */
+  .cards{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;
+  }
+  .pdf-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:14px;
+    padding:1.4rem 1.2rem;display:flex;flex-direction:column;gap:0.8rem;
+    transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s;
+    position:relative;overflow:hidden;
+  }
+  .pdf-card::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:3px;
+    background:var(--violet);transform:scaleX(0);transform-origin:left;
+    transition:transform 0.3s;
+  }
+  .pdf-card:hover{transform:translateY(-4px);border-color:var(--violet);box-shadow:0 10px 30px rgba(0,0,0,0.15);}
+  .pdf-card:hover::before{transform:scaleX(1);}
+  .pdf-card.key-card{border-color:rgba(240,199,94,0.25);}
+  .pdf-card.key-card::before{background:var(--key-accent);}
+  .pdf-card.key-card:hover{border-color:var(--key-accent);}
+  .pdf-card.game-card{border-color:rgba(56,189,248,0.25);}
+  .pdf-card.game-card::before{background:var(--game-accent);}
+  .pdf-card.game-card:hover{border-color:var(--game-accent);}
+
+  .pdf-icon{font-size:1.6rem;line-height:1;}
+  .pdf-name{
+    font-family:'Fraunces',serif;font-size:1rem;font-weight:600;line-height:1.3;
+    letter-spacing:-0.2px;
+  }
+  .pdf-meta{color:var(--muted);font-size:0.78rem;}
+  .pack-badge{
+    display:inline-block;font-size:0.65rem;font-weight:600;letter-spacing:0.5px;
+    text-transform:uppercase;padding:0.15rem 0.5rem;border-radius:100px;
+    background:var(--violet-deep);color:var(--violet);border:1px solid var(--violet-line);
+    margin-top:0.1rem;
+  }
+  .key-badge{
+    display:inline-block;font-size:0.65rem;font-weight:600;letter-spacing:0.5px;
+    text-transform:uppercase;padding:0.15rem 0.5rem;border-radius:100px;
+    background:var(--key-deep);color:var(--key-accent);border:1px solid rgba(240,199,94,0.25);
+    margin-top:0.1rem;
+  }
+  .game-badge{
+    display:inline-block;font-size:0.65rem;font-weight:600;letter-spacing:0.5px;
+    text-transform:uppercase;padding:0.15rem 0.5rem;border-radius:100px;
+    background:var(--game-deep);color:var(--game-accent);border:1px solid rgba(56,189,248,0.25);
+    margin-top:0.1rem;
+  }
+
+  .pdf-actions{
+    margin-top:auto;display:flex;gap:0.5rem;flex-wrap:wrap;
+  }
+  .btn{
+    font-size:0.75rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:8px;
+    text-decoration:none;transition:all 0.2s;letter-spacing:0.3px;
+  }
+  .btn-view{
+    background:var(--violet-deep);color:var(--violet);border:1px solid var(--violet-line);
+  }
+  .btn-view:hover{background:var(--violet);color:#fff;}
+  .btn-dl{
+    background:transparent;color:var(--muted);border:1px solid var(--border);
+  }
+  .btn-dl:hover{border-color:var(--muted);color:var(--text);}
+  .key-card .btn-view{
+    background:var(--key-deep);color:var(--key-accent);border-color:rgba(240,199,94,0.25);
+  }
+  .key-card .btn-view:hover{background:var(--key-accent);color:#1a1815;}
+  .game-card .btn-view{
+    background:var(--game-deep);color:var(--game-accent);border-color:rgba(56,189,248,0.25);
+  }
+  .game-card .btn-view:hover{background:var(--game-accent);color:#08151a;}
+
+  footer{
+    padding:2.5rem 1.5rem;color:var(--muted);font-size:0.78rem;text-align:center;
+  }
+
+  @media(max-width:600px){
+    .cards{grid-template-columns:1fr 1fr;}
+    .test-count{display:none;}
+  }
+  @media(max-width:400px){
+    .cards{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<!-- HUBGEN:backlink start -->
+  <div class="hub-nav" role="navigation" aria-label="Switch hub">
+    <a class="hub-nav__up" href="https://arschul.github.io/" data-label="Classroom Hub" aria-expanded="false" aria-controls="hub-nav-panel" title="Back to Classroom Hub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg><span class="hub-nav__sr">Back to Classroom Hub</span></a>
+    <div class="hub-nav__panel" id="hub-nav-panel">
+      <span class="hub-nav__label">Go to</span>
+      <ul class="hub-nav__list">
+      <li><a class="hub-nav__link hub-nav__link--up" href="https://arschul.github.io/"><span class="hub-nav__ic" aria-hidden="true">↑</span>Up to <span class="hub-nav__uplabel">Classroom Hub</span></a></li>
+      <li class="hub-nav__sep" role="presentation"></li>
+      <li data-hub-nav="root" hidden><a class="hub-nav__link" href="https://arschul.github.io/"><span class="hub-nav__ic" aria-hidden="true">🏫</span>Classroom Hub</a></li>
+      <li><a class="hub-nav__link" href="https://arschul.github.io/tools/teacher-dashboard/teacher-dashboard.html"><span class="hub-nav__ic" aria-hidden="true">📊</span>Teacher Dashboard</a></li>
+      <li><a class="hub-nav__link" href="https://arschul.github.io/games/"><span class="hub-nav__ic" aria-hidden="true">🎮</span>Game Hub</a></li>
+      <li><a class="hub-nav__link" href="https://arschul.github.io/grammar/"><span class="hub-nav__ic" aria-hidden="true">📖</span>Grammar Hub</a></li>
+      <li><a class="hub-nav__link" href="https://arschul.github.io/tools/"><span class="hub-nav__ic" aria-hidden="true">🧰</span>Tool Hub</a></li>
+      <li><a class="hub-nav__link" href="https://arschul.github.io/worksheets/"><span class="hub-nav__ic" aria-hidden="true">📄</span>Worksheets</a></li>
+      <li><a class="hub-nav__link" href="https://arschul.github.io/reviews/"><span class="hub-nav__ic" aria-hidden="true">📝</span>Review Hub</a></li>
+      <li><a class="hub-nav__link" href="https://arschul.github.io/lessons/" aria-current="page" data-hub-nav-current><span class="hub-nav__ic" aria-hidden="true">🎓</span>Lesson Hub</a></li>
+      <li><a class="hub-nav__link" href="https://arschul.github.io/advanced/"><span class="hub-nav__ic" aria-hidden="true">🚀</span>Advanced Hub</a></li>
+      <li><a class="hub-nav__link" href="https://arschul.github.io/vocab/"><span class="hub-nav__ic" aria-hidden="true">📚</span>Vocab Hub</a></li>
+      </ul>
+    </div>
+  </div>
+<!-- HUBGEN:backlink end -->
+
+<button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Toggle light/dark mode">🌙</button>
+
+<div class="wrap">
+
+  <p class="eyebrow">Phil Young's English School</p>
+  <h1>Lesson <span class="accent">Hub</span></h1>
+  <p class="lede">Ready-to-teach lessons, one topic each: a Student Pack and a Teacher's Guide, organized by level. Open in browser or download to print.</p>
+
+  <!-- ADVANCED -->
+  <div class="class-section">
+    <div class="class-header">
+      <span class="class-badge">Advanced</span>
+      <span class="class-title">Advanced</span>
+      <span class="test-count">2 files</span>
+    </div>
+    <div class="cards">
+      <div class="pdf-card">
+        <div class="pdf-icon">📄</div>
+        <div class="pdf-name">Urban Heat Islands</div>
+        <span class="pack-badge">Student Pack</span>
+        <div class="pdf-meta">B2+/C1 · TOEFL tasks · lecture notes · hedging · debate</div>
+        <div class="pdf-actions">
+          <a class="btn btn-view" href="advanced/Urban_Heat_Islands_Student_Pack.pdf" target="_blank">Open</a>
+          <a class="btn btn-dl" href="advanced/Urban_Heat_Islands_Student_Pack.pdf" download>↓</a>
+        </div>
+      </div>
+      <div class="pdf-card key-card">
+        <div class="pdf-icon">🔑</div>
+        <div class="pdf-name">Urban Heat Islands</div>
+        <span class="key-badge">Teacher's Guide</span>
+        <div class="pdf-meta">2h15 plan · answer keys · lecture script · audio notes</div>
+        <div class="pdf-actions">
+          <a class="btn btn-view" href="advanced/Urban_Heat_Islands_Teacher_Guide.pdf" target="_blank">Open</a>
+          <a class="btn btn-dl" href="advanced/Urban_Heat_Islands_Teacher_Guide.pdf" download>↓</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVELS:end -->
+</div>
+
+<footer>Built for Phil Young's English School · Curitiba</footer>
+
+<script>
+  // Theme is owned by assets/hub.v2.js — one key, three states, shared across hubs.
+
+</script>
+</body>
+</html>
