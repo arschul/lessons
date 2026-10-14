@@ -34,7 +34,7 @@ Lessons import `lesson_kit` and never restyle locally. The kit changes only on r
 | `ws(*parts, first=False)` | Wraps a worksheet so it starts on a new page. |
 | `ex(text)` | Example line (gray serif italic, left bar); put the answer in `<b>`. |
 | `wordbox(words, struck=())` | Gray rounded word box; the example word is struck through. |
-| `tbl(head, rows, …)`, `pair(left, right)`, `note(title, steps)`, `kgrid(*cards)` | Tables, side-by-side blocks, numbered instruction box, side-by-side key cards. |
+| `tbl(head, rows, …)`, `pair(left, right)`, `note(title, steps, inline=False)`, `kgrid(*cards)` | Tables, side-by-side blocks, numbered instruction box (`inline=True` runs short steps on one line), side-by-side key cards. |
 
 ## Visual identity
 

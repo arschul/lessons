@@ -113,6 +113,8 @@ table.t td.n { color: #8a8a8a; font-weight: bold; }
 table.t td.ex { font-family: 'DejaVu Serif', serif; font-style: italic; color: #8a8a8a;
                 border-left: 0.6pt solid #c8c8c8; padding: 4pt 6pt; margin: 0; }
 table.t.tall td { height: 28pt; }
+table.t.compact td { padding: 2.2pt 6pt; }
+table.t.compact th { padding: 3pt 6pt; }
 table.pair { width: 100%; border-collapse: collapse; }
 table.pair > tbody > tr > td { vertical-align: top; padding: 0; }
 table.pair > tbody > tr > td.gap { width: 10pt; }
@@ -257,8 +259,11 @@ def tbl(head, rows, cls="", widths=None, numcol=False):
     return f'<table class="t {cls}">{cg}<thead><tr>{th}</tr></thead><tbody>{"".join(trs)}</tbody></table>'
 
 
-def note(title, steps):
-    """Gray instruction box with numbered steps."""
+def note(title, steps, inline=False):
+    """Gray instruction box with numbered steps. inline=True runs short steps on one line to save space."""
+    if inline:
+        run = " ".join(f"<b>{i}.</b> {s}" for i, s in enumerate(steps, 1))
+        return f'<div class="note"><b>{title}:</b> {run}</div>'
     lis = "".join(f"<li>{s}</li>" for s in steps)
     return f'<div class="note"><div class="nt">{title}</div><ol>{lis}</ol></div>'
 
@@ -268,9 +273,9 @@ def kgrid(*cards):
     return '<div class="kgrid">' + "".join(cards) + "</div>"
 
 
-def pair(left, right, split=("44%", "56%")):
+def pair(left, right, split=("42%", "55%")):
     """Two blocks side by side (e.g. word table + definition table)."""
-    return (f'<table class="pair"><tr><td style="width:{split[0]}">{left}</td><td class="gap"></td>'
+    return (f'<table class="pair"><tr><td style="width:{split[0]}">{left}</td><td class="gap" style="width:3%"></td>'
             f'<td style="width:{split[1]}">{right}</td></tr></table>')
 
 

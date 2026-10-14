@@ -79,10 +79,11 @@ for i in range(1, 10):
 
 ws2 = ws(
     sec(2, "Topic vocabulary", "Vocabulary · Reading"),
-    part("A", "Match each word (1–10) to its definition (a–j)."),
+    part("A", "Match each word (1–10) to its definition (a–j). Number 0 is an example."),
+    ex("Example: 0. urban → <b>k</b> (relating to a city)"),
     pair(tbl(["#", "Word", "Answer"], [[f"{i}.", w, ""] for i, (w, _) in enumerate(VOCAB, 1)],
              cls="tall", widths=["14%", "62%", "24%"], numcol=True),
-         tbl(["", "Definition"], [[k, v] for k, v in DEFS.items()],
+         tbl(["", "Definition"], [[k, v] for k, v in DEFS.items()] + [[("k", "ex"), ("relating to a city", "ex")]],
              cls="tall", widths=["12%", "88%"], numcol=True)),
     part("B", "Complete the paragraph with the words from Part A."),
     wordbox(BOX, struck={"albedo"}),
@@ -207,6 +208,15 @@ ws4 = ws(
     "<p>Plan for 1 minute using your notes, then summarize the lecture to your partner. Cover: what an "
     "urban heat island is, two causes, who is most affected, and the professor's conclusion.</p>",
     part("B", "Role cards."),
+    note("How the debate works", [
+        "Read the situation below. Your teacher gives you ONE card.",
+        "<b>Advocates:</b> read your card and plan a 1-minute pitch (4 min). <b>Chair:</b> plan your questions.",
+        "Each advocate pitches for 1 minute. Use your strengths and answer the criticism before anyone else says it.",
+        "Open discussion: the Chair asks hard questions and advocates respond to each other.",
+        "The Chair chooses ONE option and explains the decision in 30 seconds.",
+    ]),
+    ex("Example pitch opening: The main advantage of trees is that <b>they cool the street where people walk</b>. "
+       "While it's true that <b>they take years to grow</b>, in the long run they are the most popular choice with voters."),
     '<div class="bar"><b>The situation.</b> Your city has budget for ONE heat-reduction program in the '
     "next five years. The council meets today.</div>",
     '<p class="muted small">✂ Cut along the dashed lines. One card per student.</p>',
@@ -251,11 +261,16 @@ ws5 = ws(
         ["some studies suggest / research indicates", "admittedly, …"],
         ["largely, to some extent, in many cases", "the downside is that…"],
         ["it could be argued that…", "despite + noun / -ing"],
-    ], widths=["50%", "50%"]),
+    ], cls="compact", widths=["50%", "50%"]),
     part("B", "Rewrite these overconfident claims in academic style. Use a different hedge each time."),
     ex("Example: Trees always cool the street. → Trees <b>can often</b> cool the street."),
     nlist([c + L(1, short=True) for c in REWRITE]),
     part("C", "Build a Sentence. Put the chunks in the correct order. Add punctuation."),
+    note("How to build a sentence", [
+        "Use every chunk once. Add no new words.",
+        "Find the subject and main verb first, then place the other chunks.",
+        "Start with a capital letter and end with a period.",
+    ], inline=True),
     ex("Example: stay / cities / tend to / warm at night → <b>Cities tend to stay warm at night.</b>"),
     nlist([b + L(1, short=True) for b in BUILD]),
 )
@@ -354,7 +369,7 @@ steps = ws(
         "for later.",
     ]),
     stage("Stage 2 — Topic vocabulary (15 min)", [
-        "Students match the 10 words to their definitions alone (5 min).",
+        "Students match the 10 words to their definitions alone (5 min). Item 0 (<i>urban</i> — k) is the example.",
         "Pairs compare. Check answers, drill pronunciation of <i>albedo</i> /ælˈbiːdoʊ/, <i>impervious</i> "
         "/ɪmˈpɜːrviəs/, <i>exacerbate</i> /ɪɡˈzæsərbeɪt/ (3 min).",
         "Students complete the Part B paragraph with the words from Part A, alone (5 min). <i>Albedo</i> is used "
@@ -375,7 +390,7 @@ steps = ws(
     stage("Stage 4 — Summary + city council debate (25 min)", [
         "60-second summary (8 min): 1 minute to plan from notes, then students summarize the lecture to a "
         "partner, timed, and swap. If phones are allowed, they record themselves.",
-        "Debate set-up (3 min): groups of up to six. Hand out the role cards: five advocates (Trees, Cool roofs, "
+        "Debate set-up (3 min): groups of up to six. Read the five \"How the debate works\" steps and the example pitch opening aloud. Hand out the role cards: five advocates (Trees, Cool roofs, "
         "Green roofs, Cool pavements, Cooling centers) and one Council Chair. With smaller groups, leave out "
         "Cool pavements first, then Cooling centers.",
         "Prep (4 min): advocates read their card and prepare a 1-minute pitch. The Chair prepares questions.",
@@ -391,7 +406,7 @@ steps = ws(
         "the two categories: hedges (<i>tend to, probably, some studies suggest, can sometimes, largely</i>) and "
         "concession (<i>although, the downside is that, while it's true that</i>).",
         "Controlled practice (7 min): pairs rewrite the six overconfident claims in Part B.",
-        "Build a Sentence (5 min): students reorder the five scrambled sentences in Part C, a direct copy of the "
+        "Build a Sentence (5 min): go through the three \"How to build a sentence\" steps and the example, then students reorder the five scrambled sentences in Part C, a direct copy of the "
         "TOEFL task format. Fastest pair writes answers on the board.",
     ]),
     stage("Stage 6 — Academic Discussion post (30 min)", [
